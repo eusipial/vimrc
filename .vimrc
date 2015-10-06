@@ -3,6 +3,8 @@ set autoindent
 set tabstop=4
 set softtabstop=4
 set expandtab
+set undofile
+set rnu
 
 map ,c :s/^/#/<CR>
 map ,u :s/^#//<CR>
@@ -18,6 +20,23 @@ nnoremap ' `
 nnoremap ` '
 
 let mapleader = ","
+nmap <silent> <leader>l :set rnu!<CR>
+
+set pastetoggle=,p
+" make searching smart
+set ignorecase
+set smartcase
+
+" fix regexes
+nnoremap / /\v
+vnoremap / /\v
+
+" prevent security flaws
+set modelines=0
+
+map ,c :s/^/#/<CR>
+map ,u :s/^#//<CR>
+
 
 set history=1000
 " make tab completion useful: complete up to the point of ambiguity 
